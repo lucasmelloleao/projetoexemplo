@@ -11,7 +11,7 @@ class CreateOrderController {
             table,
             name,
         });
-        return res.json(order);
+        return  res.json(order);
     }
 
 
