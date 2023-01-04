@@ -1,5 +1,9 @@
+
 import {NextFunction, Request, Response} from 'express'
 import { verify } from 'jsonwebtoken'
+
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 interface Payload{
   sub: string;
@@ -24,8 +28,9 @@ export function isAuthenticated(
   try{
     //Validar esse token.
     const { sub } = verify(
-      token, "98388750f63fac47136942aaf8ac79ce"
-      //process.env.JWT_SECRET
+      token, 
+      process.env.JWT_SECRET
+      
     ) as Payload;
 
     //Recuperar o id do token e colocar dentro de uma variavel user_id dentro do req.
