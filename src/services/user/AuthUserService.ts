@@ -1,4 +1,4 @@
-
+require('dotenv').config()
 import prismaClient from "../../prisma";
 import { compare } from 'bcryptjs'
 import { sign } from 'jsonwebtoken'
@@ -47,8 +47,8 @@ class AuthUserService{
     )
     
     
-
-    console.log (process.env)
+    console.log ('lucas')
+    console.log (process.env.JWT_SECRET)
 
     return { 
       id: user.id,
