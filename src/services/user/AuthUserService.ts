@@ -3,6 +3,7 @@ import prismaClient from "../../prisma";
 import { compare } from 'bcryptjs'
 import { sign } from 'jsonwebtoken'
 
+
 interface AuthRequest{
   email: string;
   password: string;
@@ -36,14 +37,17 @@ class AuthUserService{
         name: user.name,
         email: user.email
       },
-      //process.env.JWT_SECRET,
-      "98388750f63fac47136942aaf8ac79ce",
+      
+      process.env.JWT_SECRET,
+      //"98388750f63fac47136942aaf8ac79ce",
       {
         subject: user.id,
         expiresIn: '30d'
       }
     )
 
+    console.log (process.env.JWT_SECRET)
+    console.log (process.env)
 
     return { 
       id: user.id,
