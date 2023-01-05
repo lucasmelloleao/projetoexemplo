@@ -8,7 +8,7 @@ import { router } from './routes'
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors({origin:"https://frontend-one-mauve.vercel.app/"}));
 
 app.use(router);
 
@@ -32,15 +32,5 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 
 })
 
-
-
-var corsOptions = {
-  origin: 'https://frontend-one-mauve.vercel.app/',
-  optionsSuccessStatus: 200 // some legacy browsers (IE11, various SmartTVs) choke on 204
-}
-
-app.get('/lucas', cors(corsOptions), function (req, res, next) {
-  res.json({msg: 'This is CORS-enabled for a Single Route'})
-})
 
 app.listen(4000, () => console.log('Servidor online!!!!'))
