@@ -38,8 +38,8 @@ class AuthUserService{
         email: user.email
       },
       
-      //process.env.JWT_SECRET,
-      "98388750f63fac47136942aaf8ac79ce",
+      process.env.JWT_SECRET,
+      //"98388750f63fac47136942aaf8ac79ce",
       {
         subject: user.id,
         expiresIn: '30d'
