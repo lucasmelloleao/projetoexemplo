@@ -45,8 +45,9 @@ class AuthUserService{
         expiresIn: '30d'
       }
     )
-      console.log ("lucas")
-    console.log (process.env.JWT_SECRET)
+    
+    
+
     console.log (process.env)
 
     return { 
