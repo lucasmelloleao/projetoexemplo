@@ -32,4 +32,9 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 
 })
 
+
+app.get('/lucas', cors(), function (req, res, next) {
+  res.json({msg: 'This is CORS-enabled for a Single Route'})
+})
+
 app.listen(4000, () => console.log('Servidor online!!!!'))
